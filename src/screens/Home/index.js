@@ -1,5 +1,6 @@
 import { Button, Flex, Image } from '@chakra-ui/react'
 import { MainMenu, MainMenuMobile, Text } from 'components'
+import { AboutMeScreen } from 'screens/AboutMe'
 
 export const HomeScreen = () => {
   return (
@@ -35,6 +36,7 @@ export const HomeScreen = () => {
           <Image boxSize="600px" src="/img/MacbookPro.svg" alt="logo" />
         </Flex>
       </Flex>
+      <AboutMeScreen />
     </Flex>
   )
 }
