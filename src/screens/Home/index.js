@@ -3,7 +3,7 @@ import { MainMenu, MainMenuMobile, Text } from 'components'
 
 export const HomeScreen = () => {
   return (
-    <Flex flexDir="column" w="100vw" h="100vh">
+    <Flex flexDir="column" w="100vw" h="100vh" overflowX="hidden">
       <MainMenu />
       <MainMenuMobile />
       <Flex w={['100vw', '75vw']} m="0 auto">
