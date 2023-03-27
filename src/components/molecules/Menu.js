@@ -25,10 +25,10 @@ export const MainMenu = () => {
       </Flex>
       <Flex flexDir="row" justifyContent="space-between">
         <Menu>
-          <LinkMenu.menu href="#home">Home</LinkMenu.menu>
-          <LinkMenu.menu href="#Sobre">Sobre</LinkMenu.menu>
-          <LinkMenu.menu href="#Projetos">Projetos</LinkMenu.menu>
-          <LinkMenu.menu href="#Contato">Contato</LinkMenu.menu>
+          <LinkMenu.menu href="#Home">Home</LinkMenu.menu>
+          <LinkMenu.menu href="#About">Sobre</LinkMenu.menu>
+          <LinkMenu.menu href="#Projects">Projetos</LinkMenu.menu>
+          <LinkMenu.menu href="#Contact">Contato</LinkMenu.menu>
           <LinkMenu.menu href="#Blog">Blog (em breve)</LinkMenu.menu>
         </Menu>
       </Flex>

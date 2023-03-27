@@ -1,13 +1,14 @@
 import { Button, Flex, Image } from '@chakra-ui/react'
 import { MainMenu, MainMenuMobile, Text } from 'components'
 import { AboutMeScreen } from 'screens/AboutMe'
+import { ProjectsScreen } from 'screens/FeaturedProjects'
 
 export const HomeScreen = () => {
   return (
     <Flex flexDir="column" w="100vw" h="100vh" overflowX="hidden">
       <MainMenu />
       <MainMenuMobile />
-      <Flex w={['100vw', '75vw']} m="0 auto">
+      <Flex w={['100vw', '75vw']} m="0 auto" id="Home">
         <Flex flexDir="column" m={['15px', '0px']}>
           <Text.ScreenCaptionText mt="30px">
             Olá, meu nome é
@@ -37,6 +38,7 @@ export const HomeScreen = () => {
         </Flex>
       </Flex>
       <AboutMeScreen />
+      <ProjectsScreen />
     </Flex>
   )
 }
