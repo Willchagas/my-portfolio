@@ -1,12 +1,15 @@
 import { Box, Flex } from '@chakra-ui/react'
-import { Text } from 'components/atoms'
+import { Text, Translations } from 'components/atoms'
 import {
   AiOutlineInstagram,
   AiFillGithub,
   AiFillLinkedin
 } from 'react-icons/ai'
+import { useContext } from 'react'
+import { LanguageContext } from 'components/molecules/LanguageContext'
 
 export const Footer = () => {
+  const { language } = useContext(LanguageContext)
   return (
     <Flex w="100vw" flexDir="row" position="fixed">
       <Flex w="10%" display={['none', 'flex']}>
@@ -78,7 +81,7 @@ export const Footer = () => {
           }}
         >
           <Text.ScreenParagraph fontSize="xs" textAlign="center">
-            ©Todos os direitos reservados - Feito por Willian P. Chagas
+            {Translations[language].footer}
           </Text.ScreenParagraph>
         </Box>
       </Flex>

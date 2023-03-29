@@ -1,9 +1,12 @@
 import { Button, Flex, Image } from '@chakra-ui/react'
-import { MainMenu, MainMenuMobile, Text } from 'components'
+import { MainMenu, MainMenuMobile, Text, Translations } from 'components'
 import { AboutMeScreen } from 'screens/AboutMe'
 import { ProjectsScreen } from 'screens/FeaturedProjects'
+import { useContext } from 'react'
+import { LanguageContext } from 'components/molecules/LanguageContext'
 
 export const HomeScreen = () => {
+  const { language } = useContext(LanguageContext)
   return (
     <Flex flexDir="column" w="100vw" h="100vh" overflowX="hidden">
       <MainMenu />
@@ -11,26 +14,29 @@ export const HomeScreen = () => {
       <Flex w={['100vw', '75vw']} m="0 auto" id="Home">
         <Flex flexDir="column" m={['15px', '0px']}>
           <Text.ScreenCaptionText mt="30px">
-            Olá, meu nome é
+            {Translations[language].sentence1}
           </Text.ScreenCaptionText>
           <Text.ScreenTitle>Willian Chagas</Text.ScreenTitle>
           <Text.ScreenSubtitle>
-            Resolvo problemas usando tecnologia.
+            {Translations[language].sentence3}
           </Text.ScreenSubtitle>
           <Text.ScreenParagraph mt="50px">
-            Sou desenvolvedor front-end especializado em criar soluções web
-            excepcionais.
+            {Translations[language].sentence4}
           </Text.ScreenParagraph>
           <Text.ScreenCaptionText mt="50px">
-            Precisa de uma solução?
+            {Translations[language].sentence5}
           </Text.ScreenCaptionText>
           <Button
+            as="a"
             w={['200px', '326px']}
             mt="20px"
             colorScheme="orange"
             variant="outline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://contate.me/willchagas"
           >
-            Entre em contato
+            {Translations[language].button}
           </Button>
         </Flex>
         <Flex alignItems="flex-end" display={['none', 'flex']}>

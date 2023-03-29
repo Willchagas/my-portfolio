@@ -10,9 +10,12 @@ import {
   MenuItem,
   MenuList
 } from '@chakra-ui/react'
-import { LinkMenu } from 'components/atoms'
+import { LinkMenu, Translations } from 'components/atoms'
+import { useContext } from 'react'
+import { LanguageContext } from './LanguageContext'
 
 export const MainMenu = () => {
+  const { language, handleLanguageChange } = useContext(LanguageContext)
   return (
     <Flex
       flexDir="row"
@@ -26,26 +29,38 @@ export const MainMenu = () => {
       <Flex flexDir="row" justifyContent="space-between">
         <Menu>
           <LinkMenu.menu href="#Home">Home</LinkMenu.menu>
-          <LinkMenu.menu href="#About">Sobre</LinkMenu.menu>
-          <LinkMenu.menu href="#Projects">Projetos</LinkMenu.menu>
-          <LinkMenu.menu href="#Contact">Contato</LinkMenu.menu>
-          <LinkMenu.menu href="#Blog">Blog (em breve)</LinkMenu.menu>
+          <LinkMenu.menu href="#About">
+            {Translations[language].menuLink2}
+          </LinkMenu.menu>
+          <LinkMenu.menu href="#Projects">
+            {Translations[language].menuLink3}
+          </LinkMenu.menu>
+          <LinkMenu.menu href="#Contact">
+            {Translations[language].menuLink4}
+          </LinkMenu.menu>
+          <LinkMenu.menu href="#Blog">
+            {Translations[language].menuLink5}
+          </LinkMenu.menu>
         </Menu>
       </Flex>
       <Flex>
         <Image
+          id="pt-flag"
           boxSize="50px"
           mr="40px"
           cursor="pointer"
           src="/img/brazil.png"
-          alt="pt-br"
+          alt="Português"
+          onClick={() => handleLanguageChange('pt')}
         />
         <Image
+          id="en-flag"
           boxSize="50px"
           mr="40px"
           cursor="pointer"
           src="/img/unitedStates.png"
-          alt="en"
+          alt="English"
+          onClick={() => handleLanguageChange('en')}
         />
       </Flex>
     </Flex>
@@ -53,6 +68,7 @@ export const MainMenu = () => {
 }
 
 export const MainMenuMobile = () => {
+  const { language, handleLanguageChange } = useContext(LanguageContext)
   return (
     <Flex w="100vw" display={['flex', 'none']}>
       <Flex w="88%">
@@ -69,28 +85,32 @@ export const MainMenuMobile = () => {
           />
           <MenuList>
             <MenuItem>Home</MenuItem>
-            <MenuItem>Sobre</MenuItem>
-            <MenuItem>Projetos</MenuItem>
-            <MenuItem>Contato</MenuItem>
-            <MenuItem>Blog (em breve)</MenuItem>
+            <MenuItem>{Translations[language].menuLink2}</MenuItem>
+            <MenuItem>{Translations[language].menuLink3}</MenuItem>
+            <MenuItem>{Translations[language].menuLink4}</MenuItem>
+            <MenuItem>{Translations[language].menuLink5}</MenuItem>
             <MenuDivider />
             <MenuGroup title="Idioma | Language">
               <MenuItem>
                 <Image
+                  id="pt-flag"
                   boxSize="30px"
                   mr="40px"
                   cursor="pointer"
                   src="/img/brazil.png"
-                  alt="pt-br"
+                  alt="Português"
+                  onClick={() => handleLanguageChange('pt')}
                 />
               </MenuItem>
               <MenuItem>
                 <Image
+                  id="en-flag"
                   boxSize="30px"
                   mr="40px"
                   cursor="pointer"
                   src="/img/unitedStates.png"
-                  alt="en"
+                  alt="English"
+                  onClick={() => handleLanguageChange('en')}
                 />
               </MenuItem>
             </MenuGroup>

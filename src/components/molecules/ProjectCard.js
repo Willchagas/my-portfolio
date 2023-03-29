@@ -1,8 +1,11 @@
 import { Box, Divider, Flex, Image } from '@chakra-ui/react'
-import { Text } from 'components/atoms'
+import { Text, Translations } from 'components/atoms'
 import { AiOutlineLink, AiFillGithub } from 'react-icons/ai'
+import { useContext } from 'react'
+import { LanguageContext } from 'components/molecules/LanguageContext'
 
 export const ProjectCard = () => {
+  const { language } = useContext(LanguageContext)
   return (
     <Flex flexDir="column" p={['10px', '0px']}>
       <Flex flexDir={['column', 'row']} mt="40px">
@@ -10,9 +13,7 @@ export const ProjectCard = () => {
           <Text.ScreenCaptionText>Bookclub</Text.ScreenCaptionText>
 
           <Text.ScreenParagraph mt="20px">
-            App feito em React.js com a função principal de uma biblioteca
-            virtual. O usuário pode pesquisar livros e autores, obter suas
-            informações e favoritar os livros.
+            {Translations[language].project1Paragraph}
           </Text.ScreenParagraph>
 
           <Text.ScreenParagraph mt="20px">
@@ -65,9 +66,7 @@ export const ProjectCard = () => {
         <Flex w={['100%', '50%']} flexDir="column">
           <Text.ScreenCaptionText>Supermarket List</Text.ScreenCaptionText>
           <Text.ScreenParagraph mt="20px">
-            Esta é uma aplicação construída usando React.js, com o objetivo de
-            facilitar a criação de listas de supermercado. Foi utilizado o
-            Atomic Design Concept para organizar os componentes.
+            {Translations[language].project2Paragraph}
           </Text.ScreenParagraph>
 
           <Text.ScreenParagraph mt="20px">
@@ -115,7 +114,7 @@ export const ProjectCard = () => {
       <Flex flexDir="column" mt="100px">
         <Box>
           <Text.ScreenSubtitle color="brand.white">
-            Outros Projetos
+            {Translations[language].outherProjectTitle}
           </Text.ScreenSubtitle>
         </Box>
         <Flex>
@@ -124,7 +123,7 @@ export const ProjectCard = () => {
               <Text.ScreenCaptionText>Amazon Clone</Text.ScreenCaptionText>
 
               <Text.ScreenParagraph mt="20px">
-                Projeto feito com o objetivo de estudar o consumo de API.
+                {Translations[language].outherProjectParagraph1}
               </Text.ScreenParagraph>
 
               <Text.ScreenParagraph mt="20px">
@@ -160,8 +159,7 @@ export const ProjectCard = () => {
             <Flex w={['100%', '50%']} flexDir="column" mt={['30px', '0px']}>
               <Text.ScreenCaptionText>Decolar Clone</Text.ScreenCaptionText>
               <Text.ScreenParagraph mt="20px">
-                Esse projeto foi feito com o objetivo de reforçar os estudos
-                sobre html, css, js e responsividade.
+                {Translations[language].outherProjectParagraph2}
               </Text.ScreenParagraph>
               <Text.ScreenParagraph mt="20px">
                 HTML | CSS | JavaScript

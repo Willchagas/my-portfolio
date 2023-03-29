@@ -1,7 +1,10 @@
 import { Box, Flex, Image, ListItem, UnorderedList } from '@chakra-ui/react'
-import { Text } from 'components'
+import { Text, Translations } from 'components'
+import { useContext } from 'react'
+import { LanguageContext } from 'components/molecules/LanguageContext'
 
 export const AboutMeScreen = () => {
+  const { language } = useContext(LanguageContext)
   return (
     <Flex flexDir="column" w="1094px" m="0 auto">
       <Flex
@@ -19,20 +22,14 @@ export const AboutMeScreen = () => {
           alignContent="flex-start"
         >
           <Text.ScreenSubtitle color="brand.white">
-            Sobre mim
+            {Translations[language].aboutTitle}
           </Text.ScreenSubtitle>
           <Text.ScreenParagraph mt="40px">
-            Meu nome é Willian e eu gosto de criar soluções web que ajudem
-            pessoas e empresas a atingir seus objetivos.
+            {Translations[language].aboutParagraph1}
             <Box h="20px" />
-            Tive meu primeiro contato com programação no ensino médio técnico em
-            informática, onde aprendi o básico da programação como Lógica,
-            Pascal, JavaScript, HTML, CSS, SQL, Banco de dados relacional e não
-            relacional.
+            {Translations[language].aboutParagraph2}
             <Box h="20px" />
-            Procuro sempre me manter atualizado com novas tecnologias e
-            técnicas, para manter meus projetos com códigos cada mais limpos e
-            bem organizados.
+            {Translations[language].aboutParagraph3}
           </Text.ScreenParagraph>
         </Flex>
         <Flex
@@ -53,7 +50,7 @@ export const AboutMeScreen = () => {
       <Flex flexDir={['column', 'row']}>
         <Box w={['100vw', '50%']} p={['10px', '0px']}>
           <Text.ScreenCaptionText>
-            Essas são algumas das tecnologias que mais tenho usado recentemente:
+            {Translations[language].aboutSentence3}
           </Text.ScreenCaptionText>
         </Box>
         <Flex
