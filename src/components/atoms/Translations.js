@@ -28,7 +28,7 @@ export const Translations = {
       'I had my first contact with programming in technical high school in computer science, where I learned the basics of programming such as Logic, Pascal, JavaScript, HTML, CSS, SQL, relational and non-relational databases.',
 
     aboutParagraph3:
-      'I always seek to keep myself updated with new technologies and techniques, in order to keep my projects with cleaner and well-organized code.',
+      'I always strive to stay up-to-date with new technologies and techniques to keep my projects with cleaner and well-organized codes.',
 
     aboutSentence3:
       "These are some of the technologies I've been using the most lately:",
@@ -85,7 +85,7 @@ export const Translations = {
       'Tive meu primeiro contato com programação no ensino médio técnico em informática, onde aprendi o básico da programação como Lógica, Pascal, JavaScript, HTML, CSS, SQL, Banco de dados relacional e não relacional.',
 
     aboutParagraph3:
-      'Procuro sempre me manter atualizado com novas tecnologias e técnicas, para manter meus projetos com códigos cada mais limpos e bem organizados.',
+      'Busco sempre me manter atualizado com novas tecnologias e técnicas para manter meus projetos com códigos mais limpos e bem organizados.',
 
     aboutSentence3:
       'Essas são algumas das tecnologias que mais tenho usado recentemente:',
