@@ -5,9 +5,6 @@ import {
   Image,
   Menu,
   MenuButton,
-  MenuDivider,
-  MenuGroup,
-  MenuItem,
   MenuList
 } from '@chakra-ui/react'
 import { LinkMenu, Translations } from 'components/atoms'
@@ -70,11 +67,35 @@ export const MainMenu = () => {
 export const MainMenuMobile = () => {
   const { language, handleLanguageChange } = useContext(LanguageContext)
   return (
-    <Flex w="100vw" display={['flex', 'none']}>
-      <Flex w="88%">
+    <Flex
+      w="100vw"
+      mt="10px"
+      display={['flex', 'none']}
+      alignContent="space-evenly"
+      alignItems="center"
+    >
+      <Flex w="40%">
         <Image boxSize="125px" src="/img/logo.svg" alt="logo" />
       </Flex>
-      <Flex w="12%" mt="25px">
+      <Flex w="50%" flexDir="row" justifyContent="space-evenly">
+        <Image
+          id="pt-flag"
+          boxSize="35px"
+          cursor="pointer"
+          src="/img/brazil.png"
+          alt="Português"
+          onClick={() => handleLanguageChange('pt')}
+        />
+        <Image
+          id="en-flag"
+          boxSize="35px"
+          cursor="pointer"
+          src="/img/unitedStates.png"
+          alt="English"
+          onClick={() => handleLanguageChange('en')}
+        />
+      </Flex>
+      <Flex w="20%">
         <Menu>
           <MenuButton
             as={IconButton}
@@ -84,36 +105,23 @@ export const MainMenuMobile = () => {
             color="brand.white"
           />
           <MenuList>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>{Translations[language].menuLink2}</MenuItem>
-            <MenuItem>{Translations[language].menuLink3}</MenuItem>
-            <MenuItem>{Translations[language].menuLink4}</MenuItem>
-            <MenuItem>{Translations[language].menuLink5}</MenuItem>
-            <MenuDivider />
-            <MenuGroup title="Idioma | Language">
-              <MenuItem>
-                <Image
-                  id="pt-flag"
-                  boxSize="30px"
-                  mr="40px"
-                  cursor="pointer"
-                  src="/img/brazil.png"
-                  alt="Português"
-                  onClick={() => handleLanguageChange('pt')}
-                />
-              </MenuItem>
-              <MenuItem>
-                <Image
-                  id="en-flag"
-                  boxSize="30px"
-                  mr="40px"
-                  cursor="pointer"
-                  src="/img/unitedStates.png"
-                  alt="English"
-                  onClick={() => handleLanguageChange('en')}
-                />
-              </MenuItem>
-            </MenuGroup>
+            <Flex flexDir="column">
+              <LinkMenu.mobile color="brand.greyDark" href="#Home">
+                Home
+              </LinkMenu.mobile>
+              <LinkMenu.mobile href="#About">
+                {Translations[language].menuLink2}
+              </LinkMenu.mobile>
+              <LinkMenu.mobile href="#Projects">
+                {Translations[language].menuLink3}
+              </LinkMenu.mobile>
+              <LinkMenu.mobile href="#Contact">
+                {Translations[language].menuLink4}
+              </LinkMenu.mobile>
+              <LinkMenu.mobile href="#Blog">
+                {Translations[language].menuLink5}
+              </LinkMenu.mobile>
+            </Flex>
           </MenuList>
         </Menu>
       </Flex>
