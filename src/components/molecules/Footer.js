@@ -62,7 +62,7 @@ export const Footer = () => {
 
           <Box
             w="1px"
-            h="15vh"
+            h="12vh"
             bg="gray.200"
             bottom="0"
             ml="5%"
