@@ -16,7 +16,7 @@ export const Footer = () => {
         <Box w="100%" position="relative">
           <Box
             as="a"
-            href="https://www.instagram.com/will.jsdev/"
+            href="https://www.instagram.com/willdevforyou/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
