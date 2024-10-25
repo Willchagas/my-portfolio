@@ -106,7 +106,7 @@ export const Translations = {
     outherProjectParagraph2:
       'Esse projeto foi feito com o objetivo de reforçar os estudos sobre html, css, js e responsividade.',
 
-    finalTitle: 'Qual será o próximo?',
+    finalTitle: 'Qual será o próximo? ',
 
     finalParagraph1: 'Estou aberto a propostas de trabalho ou freelance,',
 
